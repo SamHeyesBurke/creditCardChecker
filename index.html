@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card Checker</title>
+    <link rel="stylesheet" href="resources/style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+
+<header>
+    <h1 onclick="alert()">Credit Card checker</h1>
+    <h2>Check a credit card is valid or not!</h2>
+</header>
+
+ <form>
+    <label for="creditCard">Credit card number</label>
+     <input type="text" id="creditCard" name="creditCard"> 
+ </form>
+
+ <button onclick="getResult()">Validate card!</button>
+ <button onclick="isvalid()">try this one</button>
+
+ <div id="creditNum">
+    ....
+ </div>
+
+<section>
+    <h3>Your credit Card number is:</h3>
+    <div id="creditValue"><h3>...</h3></div>
+</section>
+
+
+    <div id="isValid">
+        <h3>....</h3>
+    </div>
+</body>
+</html>
