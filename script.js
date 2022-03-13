@@ -21,9 +21,9 @@ const validateCred = (card) => {
     }
     let sum = cardInverted.reduce((a, b) => a + b, 0); // add all numbers of the array
     if (sum % 10 == 0) { // check if the modulus 10 equals zero (luhn algorithm)
-      return true; // if so return true, card is valid
+      return "The card is valid!"; // if so return true, card is valid
     } else {
-      return false; // if not return false, card is invalid
+      return "The card is invalid!"; // if not return false, card is invalid
     }  
   }
 
@@ -31,15 +31,20 @@ const validateCred = (card) => {
 
 
 
-
   function getResult () {
     let result = document.getElementById("creditCard").value;
-
+    document.getElementById('creditValue').innerHTML = result;
     let arr = Array.from(result.toString()).map(Number);
+     document.getElementById('isValid').innerHTML = validateCred(arr);
 
+    let warning = document.getElementById('warningMessage').innerHTML;
 
-    document.getElementById('creditValue').innerHTML = validateCred(arr);
+    if (arr.includes(NaN) || (arr.length >16 || arr.length <15)) {
+        document.getElementById("warningMessage").innerHTML = " -INVALID  - A credit card is a 15-16 digit number"
+    } else {
+        document.getElementById("warningMessage").innerHTML = ""
 
+    }
   }
 
 
